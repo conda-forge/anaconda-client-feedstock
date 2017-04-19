@@ -1,6 +1,6 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.5.1" %}
-{% set checksum = "011ef0562f36edb0775a2c67d1abb63814ecd95bcb78c8ae60975e5c5200b17c" %}
+{% set version = "1.5.3" %}
+{% set checksum = "1a7dc39661b606443134a76bebe0e062a262aa774387daa72a38d066da6a3fbe" %}
 
 package:
   name: {{ name }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ checksum }}
 
 build:
-  number: 2
+  number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   entry_points:
     - anaconda = binstar_client.scripts.cli:main
@@ -27,7 +27,7 @@ requirements:
   run:
     - python
     - clyent
-    - requests >=2.0
+    - requests >=2.9.1
     - pyyaml
     - python-dateutil
     - pytz
@@ -53,6 +53,7 @@ test:
 about:
   home: https://github.com/Anaconda-Platform/anaconda-client
   license: BSD 3-Clause
+  license_file: LICENSE.md
   summary: Anaconda Cloud command line client library
 
 extra:
