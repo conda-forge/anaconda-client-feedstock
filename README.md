@@ -14,9 +14,7 @@ Summary: Anaconda Cloud command line client library
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/anaconda-client-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/anaconda-client-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/anaconda-client-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/anaconda-client-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/anaconda-client-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/anaconda-client-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/anaconda-client-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/anaconda-client-feedstock)
 
 Current release info
 ====================
