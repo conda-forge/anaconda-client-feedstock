@@ -1,6 +1,6 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.6.11" %}
-{% set checksum = "bfaa060a182ccb403b4a12589c235e499b2f3ec79ad2fca437bd9322b1ad44ac" %}
+{% set version = "1.6.12" %}
+{% set checksum = "5482cb1825d4b82ecb76293ef81919eb000903958cfe0fa73123f3dc922f8e16" %}
 
 package:
   name: {{ name }}
