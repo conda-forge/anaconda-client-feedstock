@@ -14,12 +14,15 @@ Summary: Anaconda Cloud command line client library
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/anaconda-client-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/anaconda-client-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/anaconda-client-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/anaconda-client-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/anaconda-client/badges/version.svg)](https://anaconda.org/conda-forge/anaconda-client)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/anaconda-client/badges/downloads.svg)](https://anaconda.org/conda-forge/anaconda-client)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-anaconda--client-green.svg)](https://anaconda.org/conda-forge/anaconda-client) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/anaconda-client.svg)](https://anaconda.org/conda-forge/anaconda-client) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/anaconda-client.svg)](https://anaconda.org/conda-forge/anaconda-client) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/anaconda-client.svg)](https://anaconda.org/conda-forge/anaconda-client) |
 
 Installing anaconda-client
 ==========================
