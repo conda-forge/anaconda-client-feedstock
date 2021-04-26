@@ -1,0 +1,24 @@
+From 3ba6fab021705e84d4979fa6d71645a8d10a79c5 Mon Sep 17 00:00:00 2001
+From: Steve Chan <steve@deepgenomics.com>
+Date: Wed, 21 Oct 2020 14:38:51 -0400
+Subject: [PATCH] fix: AttributeError: module 'base64' has no attribute
+ 'encodestring'
+
+Python 3.9 has removed the deprecated fallback for Python 2.x
+---
+ binstar_client/utils/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/binstar_client/utils/__init__.py b/binstar_client/utils/__init__.py
+index 1501ea7..499f807 100644
+--- a/binstar_client/utils/__init__.py
++++ b/binstar_client/utils/__init__.py
+@@ -49,7 +49,7 @@ def compute_hash(fp, buf_size=8192, size=None, hash_algorithm=md5):
+             s = fp.read(buf_size)
+     hex_digest = hash_obj.hexdigest()
+
+-    b64encode = getattr(base64, 'encodebytes', base64.encodestring)
++    b64encode = getattr(base64, 'encodebytes', getattr(base64, 'encodestring', None))
+     base64_digest = b64encode(hash_obj.digest())
+     if base64_digest[-1] == '\n':
+         base64_digest = base64_digest[0:-1]
