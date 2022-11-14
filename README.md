@@ -151,6 +151,3 @@ Feedstock Maintainers
 * [@goanpeca](https://github.com/goanpeca/)
 * [@jakirkham](https://github.com/jakirkham/)
 
-
-<!-- dummy commit to enable rerendering -->
-
