@@ -1,5 +1,5 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.8.0" %}
+{% set version = "1.11.0" %}
 
 package:
   name: {{ name }}
@@ -8,11 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
-  sha256: be97ef87be4e9076db91c0aaee4a4dc30e2527c8d87c63c8a0c12cd6fd269d95
-  {% if version == "1.7.2" %}
-  patches:
-    - 00000_base64_py39.patch
-  {% endif %}
+  sha256: ca5ff199623276d8a3027bc321efbee4e5bd7b3ee5c7ec43895144755abfd65b
 
 build:
   number: 0
@@ -30,14 +26,17 @@ requirements:
 
   run:
     - python >=3.6
-    - setuptools
     - clyent >=1.2.0
+    - conda-package-handling >=1.7.3
     - nbformat >=4.4.0
     - pyyaml >=3.12
     - python-dateutil >=2.6.1
     - pytz
     - requests >=2.9.1
-    - six
+    - six >=1.15.0
+    - setuptools >=58.0.4
+    - tqdm >=4.56.0
+    - urllib3 >=1.26.4
 
 test:
   imports:
@@ -69,3 +68,4 @@ extra:
   recipe-maintainers:
     - jakirkham
     - goanpeca
+    - beckermr
