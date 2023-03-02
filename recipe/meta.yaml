@@ -48,7 +48,6 @@ test:
     - binstar_client.inspect_package
     - binstar_client.mixins
     - binstar_client.scripts
-    - binstar_client.tests
     - binstar_client.utils
     - binstar_client.utils.notebook
 
