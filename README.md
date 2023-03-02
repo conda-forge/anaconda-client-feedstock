@@ -1,11 +1,11 @@
-About anaconda-client
-=====================
+About anaconda-client-feedstock
+===============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/anaconda-client-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Anaconda-Platform/anaconda-client
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/anaconda-client-feedstock/blob/main/LICENSE.txt)
 
 Summary: Anaconda Cloud command line client library
 

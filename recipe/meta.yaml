@@ -1,5 +1,5 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.11.0" %}
+{% set version = "1.11.1" %}
 
 package:
   name: {{ name }}
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
-  sha256: ca5ff199623276d8a3027bc321efbee4e5bd7b3ee5c7ec43895144755abfd65b
+  sha256: 2b3e420e2f52a76796468fb1bf6c3bca4012e4ec111cbdd073d88e8b31def2e5
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -28,28 +28,28 @@ requirements:
     - python >=3.6
     - clyent >=1.2.0
     - conda-package-handling >=1.7.3
+    - defusedxml >=0.7.1
     - nbformat >=4.4.0
-    - pyyaml >=3.12
     - python-dateutil >=2.6.1
-    - pytz
+    - pytz >=2021.3
+    - pyyaml >=3.12
     - requests >=2.20.0
-    - six >=1.15.0
     - setuptools >=58.0.4
+    - six >=1.15.0
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
+    - anaconda-project >=0.9.1
+    - pillow >=8.2
 
 test:
   imports:
     - binstar_client
     - binstar_client.commands
     - binstar_client.inspect_package
-    - binstar_client.inspect_package.tests
     - binstar_client.mixins
     - binstar_client.scripts
-    - binstar_client.tests
     - binstar_client.utils
     - binstar_client.utils.notebook
-    - binstar_client.utils.notebook.tests
 
   commands:
     - anaconda --help
