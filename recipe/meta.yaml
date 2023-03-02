@@ -46,13 +46,11 @@ test:
     - binstar_client
     - binstar_client.commands
     - binstar_client.inspect_package
-    - binstar_client.inspect_package.tests
     - binstar_client.mixins
     - binstar_client.scripts
     - binstar_client.tests
     - binstar_client.utils
     - binstar_client.utils.notebook
-    - binstar_client.utils.notebook.tests
 
   commands:
     - anaconda --help
