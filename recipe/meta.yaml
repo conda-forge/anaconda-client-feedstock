@@ -9,9 +9,13 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
   sha256: 2b3e420e2f52a76796468fb1bf6c3bca4012e4ec111cbdd073d88e8b31def2e5
+  patches:
+    # Refresh Anaconda.org metadata on new package upload.
+    # xref: https://github.com/Anaconda-Platform/anaconda-client/pull/641
+    - PR_641.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:

@@ -1,0 +1,35 @@
+From 44fbbc008ebf747424e651611890346820b9287f Mon Sep 17 00:00:00 2001
+From: Jesse Wiles <jesse.wiles@gmail.com>
+Date: Wed, 29 Mar 2023 09:48:12 -0400
+Subject: [PATCH] AC-149: Use package metadata on upload
+
+---
+ binstar_client/commands/upload.py   |  9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/binstar_client/commands/upload.py b/binstar_client/commands/upload.py
+index 67b73042..386649b1 100644
+--- a/binstar_client/commands/upload.py
++++ b/binstar_client/commands/upload.py
+@@ -157,6 +157,10 @@ def add_release(aserver_api, args, username, package_name, version, release_attr
+     try:
+         # Check if the release already exists
+         aserver_api.release(username, package_name, version)
++
++        # If it exists update public attrs if needed.
++        if args.use_package_metadata:
++            aserver_api.update_release(username, package_name, version, release_attrs)
+     except errors.NotFound:
+         if args.mode == 'interactive':
+             create_release_interactive(aserver_api, username, package_name, version, release_attrs)
+@@ -458,5 +462,10 @@ def add_parser(subparsers):
+         dest='mode',
+         const='skip',
+     )
++    group.add_argument(
++        '--use-package-metadata',
++        action='store_true',
++        help='Overwrite existing release metadata with the metadata from the package.',
++    )
+ 
+     parser.set_defaults(main=main)
