@@ -1,5 +1,5 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.11.3" %}
+{% set version = "1.12.0" %}
 
 package:
   name: {{ name }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
-  sha256: c2a6bb121dd16082b384b9dd0393003f1947ebd1930fb758033bbecbe01a123d
+  sha256: b33a56b886834f5dffd5586c684310b6e53797af571a99247ccfdfd02531defb
 
 build:
   number: 0
