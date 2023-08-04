@@ -11,7 +11,7 @@ source:
   sha256: b33a56b886834f5dffd5586c684310b6e53797af571a99247ccfdfd02531defb
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -21,11 +21,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
 
   run:
-    - python >=3.6
+    - python >=3.8
     - clyent >=1.2.0
     - conda-package-handling >=1.7.3
     - defusedxml >=0.7.1
