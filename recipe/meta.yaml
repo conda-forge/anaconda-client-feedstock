@@ -26,10 +26,10 @@ requirements:
 
   run:
     - python >=3.8
-    - clyent >=1.2.0
     - conda-package-handling >=1.7.3
     - defusedxml >=0.7.1
     - nbformat >=4.4.0
+    - platformdirs >=3.10.0,<5.0
     - python-dateutil >=2.6.1
     - pytz >=2021.3
     - pyyaml >=3.12
