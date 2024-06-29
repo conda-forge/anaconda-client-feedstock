@@ -11,7 +11,7 @@ source:
   sha256: c8ec5372be06d003ee5acb0171b412f7ef6ef22beeada2c85e7898d8333f5625
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -39,8 +39,6 @@ requirements:
     - six >=1.15.0
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
-    - anaconda-project >=0.9.1
-    - pillow >=8.2
 
 test:
   imports:
