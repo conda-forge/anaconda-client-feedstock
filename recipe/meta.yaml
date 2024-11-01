@@ -61,7 +61,7 @@ about:
   license: BSD-3-Clause
   license_file: LICENSE.md
   summary: anaconda.org command line client library
-  doc_url: https://docs.anaconda.com/anaconda-cloud/user-guide/getting-started/
+  doc_url: https://docs.anaconda.com/anacondaorg/commandreference/
   dev_url: https://github.com/anaconda/anaconda-client
 
 extra:
