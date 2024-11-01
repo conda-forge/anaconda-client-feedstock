@@ -9,7 +9,7 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/anaconda/anaconda-client/archive/{{ version }}.tar.gz
   # TODO: Update hash after release is made
-  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
+  sha256: e1dcefb66a09e99278c2dcf21ae41bc1328c0dbb762025a20f36e4e9fcf8d593
 
 build:
   number: 0
