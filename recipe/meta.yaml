@@ -7,7 +7,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
+  url: https://github.com/anaconda/anaconda-client/archive/{{ version }}.tar.gz
   sha256: c8ec5372be06d003ee5acb0171b412f7ef6ef22beeada2c85e7898d8333f5625
 
 build:
