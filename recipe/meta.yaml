@@ -60,7 +60,7 @@ about:
   home: https://github.com/anaconda/anaconda-client
   license: BSD-3-Clause
   license_file: LICENSE.md
-  summary: Anaconda Cloud command line client library
+  summary: anaconda.org command line client library
   doc_url: https://docs.anaconda.com/anaconda-cloud/user-guide/getting-started/
   dev_url: https://github.com/anaconda/anaconda-client
 
