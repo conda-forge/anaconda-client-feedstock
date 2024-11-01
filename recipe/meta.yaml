@@ -16,7 +16,6 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
-    - anaconda = binstar_client.scripts.cli:main
     - binstar = binstar_client.scripts.cli:main
     - conda-server = binstar_client.scripts.cli:main
 
@@ -53,7 +52,6 @@ test:
     - binstar_client.utils.notebook
 
   commands:
-    - anaconda --help
     - binstar --help
     - conda-server --help
 
