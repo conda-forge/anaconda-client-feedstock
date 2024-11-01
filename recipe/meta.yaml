@@ -8,7 +8,6 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/anaconda/anaconda-client/archive/{{ version }}.tar.gz
-  # TODO: Update hash after release is made
   sha256: e1dcefb66a09e99278c2dcf21ae41bc1328c0dbb762025a20f36e4e9fcf8d593
 
 build:
