@@ -3,15 +3,15 @@ About anaconda-client-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/anaconda-client-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/Anaconda-Platform/anaconda-client
+Home: https://github.com/anaconda/anaconda-client
 
 Package license: BSD-3-Clause
 
-Summary: Anaconda Cloud command line client library
+Summary: anaconda.org command line client library
 
-Development: https://github.com/Anaconda-Platform/anaconda-client
+Development: https://github.com/anaconda/anaconda-client
 
-Documentation: https://docs.anaconda.com/anaconda-cloud/user-guide/getting-started/
+Documentation: https://docs.anaconda.com/anacondaorg/commandreference/
 
 Current build status
 ====================
