@@ -1,5 +1,5 @@
 {% set name = "anaconda-client" %}
-{% set version = "1.12.3" %}
+{% set version = "1.13.0" %}
 
 package:
   name: {{ name }}
@@ -7,26 +7,28 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
-  sha256: c8ec5372be06d003ee5acb0171b412f7ef6ef22beeada2c85e7898d8333f5625
+  url: https://github.com/anaconda/anaconda-client/archive/{{ version }}.tar.gz
+  sha256: e1dcefb66a09e99278c2dcf21ae41bc1328c0dbb762025a20f36e4e9fcf8d593
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   entry_points:
-    - anaconda = binstar_client.scripts.cli:main
     - binstar = binstar_client.scripts.cli:main
     - conda-server = binstar_client.scripts.cli:main
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
 
   run:
-    - python >=3.8
+    - python >={{ python_min }}
+    - anaconda-cli-base >=0.4.0
     - conda-package-handling >=1.7.3
+    - conda-package-streaming >=0.9.0
     - defusedxml >=0.7.1
     - nbformat >=4.4.0
     - platformdirs >=3.10.0,<5.0
@@ -36,11 +38,12 @@ requirements:
     - requests >=2.20.0
     - requests-toolbelt >=0.9.1
     - setuptools >=58.0.4
-    - six >=1.15.0
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - binstar_client
     - binstar_client.commands
@@ -51,20 +54,20 @@ test:
     - binstar_client.utils.notebook
 
   commands:
-    - anaconda --help
     - binstar --help
     - conda-server --help
 
 about:
-  home: https://github.com/Anaconda-Platform/anaconda-client
+  home: https://github.com/anaconda/anaconda-client
   license: BSD-3-Clause
   license_file: LICENSE.md
-  summary: Anaconda Cloud command line client library
-  doc_url: https://docs.anaconda.com/anaconda-cloud/user-guide/getting-started/
-  dev_url: https://github.com/Anaconda-Platform/anaconda-client
+  summary: anaconda.org command line client library
+  doc_url: https://www.anaconda.com/docs/tools/anaconda-org/commandreference
+  dev_url: https://github.com/anaconda/anaconda-client
 
 extra:
   recipe-maintainers:
     - jakirkham
     - goanpeca
     - mbargull
+    - mattkram
