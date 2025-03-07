@@ -20,12 +20,12 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
 
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - anaconda-cli-base >=0.4.0
     - conda-package-handling >=1.7.3
     - conda-package-streaming >=0.9.0
@@ -42,6 +42,8 @@ requirements:
     - urllib3 >=1.26.4
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - binstar_client
     - binstar_client.commands
