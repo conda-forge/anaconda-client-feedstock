@@ -11,7 +11,7 @@ Summary: anaconda.org command line client library
 
 Development: https://github.com/anaconda/anaconda-client
 
-Documentation: https://docs.anaconda.com/anacondaorg/commandreference/
+Documentation: https://www.anaconda.com/docs/tools/anaconda-org/commandreference
 
 Current build status
 ====================
