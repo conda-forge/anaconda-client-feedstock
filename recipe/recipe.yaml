@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 1.13.0
+  version: "1.13.1"
 
 package:
   name: anaconda-client
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/anaconda/anaconda-client/archive/${{ version }}.tar.gz
-  sha256: e1dcefb66a09e99278c2dcf21ae41bc1328c0dbb762025a20f36e4e9fcf8d593
+  sha256: 96990e99d9c13e67e88c5a943936ae3596dcf6c4676175569e1b0aac3980cb12
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --disable-pip-version-check
