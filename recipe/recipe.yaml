@@ -46,6 +46,10 @@ requirements:
     # Technically an `[extra]`, but fails to upload on any `icon`
     # https://github.com/conda-forge/anaconda-client-feedstock/issues/57
     - pillow >=8.2
+    # anaconda-cli-base requires it and doesn't have it declared
+    # without this, pip check isn't passing
+    # https://github.com/conda-forge/anaconda-cli-base-feedstock/issues/19
+    - packaging
 
 tests:
   - python:
