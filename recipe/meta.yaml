@@ -26,6 +26,7 @@ requirements:
     - python
     - anaconda-anon-usage >=0.7.3
     - anaconda-cli-base >=0.4.0
+    - anaconda-auth >=0.11.0
     - conda-package-handling >=1.7.3
     - defusedxml >=0.7.1
     - nbformat >=4.4.0
@@ -38,7 +39,6 @@ requirements:
     - setuptools >=58.0.4
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
-    - anaconda-auth >=0.11.0
 
 test:
   imports:
