@@ -16,7 +16,7 @@ build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --disable-pip-version-check
+    - SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --disable-pip-version-check
   python:
     entry_points:
       - binstar = binstar_client.scripts.cli:main
