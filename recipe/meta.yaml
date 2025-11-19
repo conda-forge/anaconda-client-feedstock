@@ -58,6 +58,7 @@ test:
     - conda
     - pip
     - pytest
+    - pytest-mock
     - pillow >=8.2
     - freezegun
   commands:
