@@ -26,7 +26,10 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - hatchling
+    - hatch-vcs >=0.3
+    - setuptools-scm >=7.1
+    - hatch-requirements-txt
   run:
     - anaconda-cli-base >=0.4.0
     - conda-package-handling >=1.7.3
