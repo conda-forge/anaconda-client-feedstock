@@ -73,7 +73,10 @@ test:
     - anaconda org --help
     - python -c "import binstar_client; print(f'binstar_client.__version__ is {binstar_client.__version__}')"
     - python -c "import binstar_client; assert binstar_client.__version__ == \"{{ version }}\""
-    - pytest -v tests
+    - pytest -v tests # [not osx]
+    # Skip tests that require network access or cause "Too many open files" errors
+    # Only seen on CI, not replicated locally.
+    - pytest -v tests --ignore=tests/test_copy.py --ignore=tests/test_groups.py --ignore=tests/test_login.py --ignore=tests/test_update.py --ignore=tests/test_upload.py --ignore=tests/test_whoami.py --ignore=tests/utils/test_config.py -k "not test_download_arg_parsing and not test_write_env and not test_find_conda and not test_has_environment and not test_local_image" # [osx]
 
 about:
   home: https://anaconda.org
