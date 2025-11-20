@@ -1,4 +1,4 @@
-{% set version = "1.13.1" %}
+{% set version = "1.14.0" %}
 
 package:
   name: anaconda-client
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/Anaconda-Platform/anaconda-client/archive/{{ version }}.tar.gz
-  sha256: 96990e99d9c13e67e88c5a943936ae3596dcf6c4676175569e1b0aac3980cb12
+  sha256: 2f3f26bff6753d5a55bc21736626080613a34848a1f4072afad5f56775a2bd85
 
 build:
   number: 0
@@ -16,16 +16,20 @@ build:
     - conda-server = binstar_client.scripts.cli:main
 
 requirements:
-  build:
-    - git  # [not win]
   host:
     - pip
     - python
-    - setuptools
+    - hatchling
+    - hatch-vcs >=0.3
+    - setuptools-scm >=7.1
+    - hatch-requirements-txt
   run:
+    # Based on:
+    # requirements.txt, conda.recipe/meta.yaml, requirements-extra.txt
     - python
     - anaconda-anon-usage >=0.7.3
-    - anaconda-cli-base >=0.4.0
+    - anaconda-cli-base >=0.5.3
+    - anaconda-auth >=0.11.0 # minimum effectively required
     - conda-package-handling >=1.7.3
     - defusedxml >=0.7.1
     - nbformat >=4.4.0
@@ -38,6 +42,9 @@ requirements:
     - setuptools >=58.0.4
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
+  run_constrained:
+    - anaconda-project >=0.9.1
+    - pillow >=8.2
 
 test:
   imports:
@@ -53,9 +60,10 @@ test:
   requires:
     - conda
     - pip
-    - pytest
-    - pillow >=8.2
-    - freezegun
+    - pytest >=8.4
+    - pytest-mock >=3.15
+    - pillow
+    - freezegun >=1.5
   commands:
     - pip check
     - export ANACONDA_CLI_FORCE_NEW=1  # [unix]
@@ -65,7 +73,10 @@ test:
     - anaconda org --help
     - python -c "import binstar_client; print(f'binstar_client.__version__ is {binstar_client.__version__}')"
     - python -c "import binstar_client; assert binstar_client.__version__ == \"{{ version }}\""
-    - pytest -v tests
+    - pytest -v tests # [not osx]
+    # Skip tests that require network access or cause "Too many open files" errors
+    # Only seen on CI, not replicated locally.
+    - pytest -v tests --ignore=tests/test_copy.py --ignore=tests/test_groups.py --ignore=tests/test_login.py --ignore=tests/test_update.py --ignore=tests/test_upload.py --ignore=tests/test_whoami.py --ignore=tests/utils/test_config.py -k "not test_download_arg_parsing and not test_write_env and not test_find_conda and not test_has_environment and not test_local_image" # [osx]
 
 about:
   home: https://anaconda.org
