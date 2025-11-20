@@ -26,10 +26,12 @@ requirements:
     - setuptools-scm >=7.1
     - hatch-requirements-txt
   run:
+    # Based on:
+    # requirements.txt, conda.recipe/meta.yaml, requirements-extra.txt
     - python
     - anaconda-anon-usage >=0.7.3
-    - anaconda-cli-base >=0.4.0
-    - anaconda-auth >=0.11.0
+    - anaconda-cli-base >=0.5.3
+    - anaconda-auth >=0.11.0 # minimum effectively required
     - conda-package-handling >=1.7.3
     - defusedxml >=0.7.1
     - nbformat >=4.4.0
@@ -42,6 +44,9 @@ requirements:
     - setuptools >=58.0.4
     - tqdm >=4.56.0
     - urllib3 >=1.26.4
+  run_constrained:
+    - anaconda-project >=0.9.1
+    - pillow >=8.2
 
 test:
   imports:
@@ -57,10 +62,10 @@ test:
   requires:
     - conda
     - pip
-    - pytest
-    - pytest-mock
-    - pillow >=8.2
-    - freezegun
+    - pytest >=8.4
+    - pytest-mock >=3.15
+    - pillow
+    - freezegun >=1.5
   commands:
     - pip check
     - export ANACONDA_CLI_FORCE_NEW=1  # [unix]
