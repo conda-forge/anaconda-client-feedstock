@@ -31,8 +31,8 @@ requirements:
     - setuptools-scm >=7.1
     - hatch-requirements-txt
   run:
-    - anaconda-cli-base >=0.4.0
-    - anaconda-auth >=0.11.0
+    - anaconda-cli-base >=0.7.0
+    - anaconda-auth >=0.12.3
     - conda-package-handling >=1.7.3
     - conda-package-streaming >=0.9.0
     - defusedxml >=0.7.1
