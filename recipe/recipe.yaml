@@ -3,6 +3,7 @@ schema_version: 1
 
 context:
   version: "1.14.0"
+  python_min: "3.8"
 
 package:
   name: anaconda-client
