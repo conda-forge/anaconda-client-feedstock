@@ -85,8 +85,8 @@ about:
   license_file: LICENSE.md
   summary: anaconda.org command line client library
   description: |
-    Anaconda-client is used to connect to and manage your Anaconda Cloud account, upload packages you have created
+    Anaconda-client is used to connect to and manage your packages on anaconda.org, upload packages you have created
     and generate access tokens to allow access to private packages.
   doc_url: https://docs.anaconda.com/anacondaorg/
-  doc_source_url: https://github.com/anaconda/anaconda-client/blob/master/README.md
+  doc_source_url: https://github.com/anaconda/anaconda-client/blob/main/README.md
   dev_url: https://github.com/anaconda/anaconda-client
