@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.14.1"
+  version: "1.15.0"
 
 package:
   name: anaconda-client
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/anaconda/anaconda-client/archive/${{ version }}.tar.gz
-  sha256: 8a87e229021727bc357777a49fdc7b8d9299beb2dbe463dbe2b9092cf95d0684
+  sha256: 65f6c135ab0528df2d66153f93f16beee721fb3d1ab5f88e1a869905d4b796dc
 
 build:
   number: 0
