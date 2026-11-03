@@ -11,9 +11,12 @@ package:
 source:
   url: https://github.com/anaconda/anaconda-client/archive/${{ version }}.tar.gz
   sha256: 3abb6246aae258dde2cf06a72959ab6fe18385261c1e1b931f4208b6f6fb531e
+  patches:
+    # https://github.com/anaconda/anaconda-client/pull/942
+    - 0001-restore-upload-label-aliases-with-user.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --disable-pip-version-check
@@ -73,8 +76,12 @@ tests:
   - requirements:
       run:
         - python ${{ python_min }}.*
+    files:
+      recipe:
+        - test_upload.py
     script:
       - binstar --help
+      - python test_upload.py
       - conda-server --help
       - python -c "from binstar_client.utils.notebook.data_uri import DataURIConverter; DataURIConverter(None).check_pillow_installed()"
 
