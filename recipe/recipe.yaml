@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.14.1"
+  version: "1.16.0"
 
 package:
   name: anaconda-client
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/anaconda/anaconda-client/archive/${{ version }}.tar.gz
-  sha256: 8a87e229021727bc357777a49fdc7b8d9299beb2dbe463dbe2b9092cf95d0684
+  sha256: 3abb6246aae258dde2cf06a72959ab6fe18385261c1e1b931f4208b6f6fb531e
 
 build:
   number: 0
@@ -31,8 +31,12 @@ requirements:
     - setuptools-scm >=7.1
     - hatch-requirements-txt
   run:
-    - anaconda-cli-base >=0.7.0
+    - anaconda-cli-base >=0.9.1
     - anaconda-auth >=0.12.3
+    - anaconda-opentelemetry >=1.2.2
+    # Exact pin mirrors upstream's requirements.txt: click 8.5.0 deprecates
+    # click.utils.get_binary_stream, which typer<0.26.0 still imports.
+    - click ==8.4.1
     - conda-package-handling >=1.7.3
     - conda-package-streaming >=0.9.0
     - defusedxml >=0.7.1
@@ -49,10 +53,9 @@ requirements:
     - urllib3 >=1.26.4
     # Technically an `[extra]`, but fails to upload on any `icon`
     # https://github.com/conda-forge/anaconda-client-feedstock/issues/57
-    - pillow >=8.2
-    # anaconda-cli-base requires it and doesn't have it declared
-    # without this, pip check isn't passing
-    # https://github.com/conda-forge/anaconda-cli-base-feedstock/issues/19
+    - pillow >=10.2.0
+    # binstar_client/inspect_package/pypi.py imports packaging, but upstream
+    # doesn't declare it.
     - packaging
 
 tests:
