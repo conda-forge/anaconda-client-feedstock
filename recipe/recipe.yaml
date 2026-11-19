@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.16.0"
+  version: "1.17.0"
 
 package:
   name: anaconda-client
@@ -10,13 +10,13 @@ package:
 
 source:
   url: https://github.com/anaconda/anaconda-client/archive/${{ version }}.tar.gz
-  sha256: 3abb6246aae258dde2cf06a72959ab6fe18385261c1e1b931f4208b6f6fb531e
+  sha256: b0a3ee3e346d5798dedd12d2300fa6b1099a258ea28beea1fa02f6901f85ff14
   patches:
     # https://github.com/anaconda/anaconda-client/pull/942
     - 0001-restore-upload-label-aliases-with-user.patch
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script:
     - SETUPTOOLS_SCM_PRETEND_VERSION=${{ version }} ${{ PYTHON }} -m pip install . -vv --no-deps --ignore-installed --disable-pip-version-check
